@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
-    // let mostrarFormulario = true;
-    // const mostrarBoton = (mostrarFormulario) => {
-    //     if (mostrarFormulario === true) {
-    //         mostrarFormulario = true;
-    //     } else {
-    //         mostrarFormulario = false;
-    //     }
-    //     return mostrarFormulario;
-    // }
-    const [ formulario, mostrarformulario ] = useState(true);
+    const [showForm, setShowForm] = useState(true);
+     /*const mostrarBoton = (mostrarFormulario) => {
+         if (mostrarFormulario === true) {
+             mostrarFormulario = true;
+         } else {
+             mostrarFormulario = false;
+         }
+         return mostrarFormulario;
+     }*/
+     
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between">
             <div className="container">
@@ -24,7 +24,7 @@ const Header = () => {
             </div>
 
             {
-                (formulario) ? (
+                (showForm) ? (
                     <Link 
                         to={'/'}
                         className="btn btn-warning mr-2 nuevo-post d-block d-md-inline-block"
@@ -34,7 +34,7 @@ const Header = () => {
                         to={'/productos/nuevo'}
                         className="btn btn-danger nuevo-post d-block d-md-inline-block"
                     >Agregar Producto &#43;</Link>
-                )
+                );
             }
         </nav>
     );
